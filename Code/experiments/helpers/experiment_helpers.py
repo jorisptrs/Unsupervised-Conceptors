@@ -9,7 +9,7 @@ from lib.conceptors import *
 Facade to simplify experiment code, e.g., when computing certain values or caching.
 """
 
-def compute_Cs_and_Ns(group, esn, aperture="auto", normalize=True, XorZ="X", cache=True):
+def compute_Cs_and_Ns(group, esn, aperture="auto", normalize=False, XorZ="X", cache=True):
     Cs = compute_Cs(group=group, esn=esn, aperture=aperture, normalize=normalize, XorZ=XorZ, cache=cache)
     debug_print("- computing negative conceptors")
     Ns = Ns_from_Cs(Cs)

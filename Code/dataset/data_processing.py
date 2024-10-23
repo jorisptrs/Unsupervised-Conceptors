@@ -96,7 +96,7 @@ def filter_and_downsample(features, labels, selected_labels=None, limit=None, pe
     print(f"Filtered to {len(downsampled_features)} train and {len(remaining_features)} test samples.")
     print(f"...of shape: {downsampled_features[0].shape}")
 
-    classes = list(set(downsampled_labels))
+    classes = list(dict.fromkeys(downsampled_labels))
 
     if limit is not None or percent_limit is not None:
         return classes, downsampled_features, downsampled_labels, remaining_features, remaining_labels

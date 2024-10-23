@@ -37,7 +37,7 @@ class DataLoader():
             'gcl': 'h#', 'h#': 'h#', 'pau': 'h#', 'epi': 'h#', 'ax-h': 'ah', 'q': 'h#'
         }
         self.phon61 = list(self.phone_map.keys())
-        self.phon39 = list(set(self.phone_map.values()))
+        self.phon39 = list(dict.fromkeys(self.phone_map.values()))
         self.phon61.sort()
         self.phon39.sort()
 
